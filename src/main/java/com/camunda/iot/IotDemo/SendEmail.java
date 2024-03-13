@@ -14,8 +14,10 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 
 public class SendEmail implements JavaDelegate {
 	public void execute (DelegateExecution execution) throws Exception{
+	        String name = (String) execution.getVariable("name");
+	        boolean weatherOk = (boolean) execution.getVariable("weatherOk");
 		
-			String email=(String) execution.getVariable("email");
+			String email = (String) execution.getVariable("email");
 			if (email == null) {
 	            System.out.println("Email address is null. Cannot send email.");
 	            return; // or handle the error appropriately
@@ -38,14 +40,17 @@ public class SendEmail implements JavaDelegate {
 				}
 			});
 			
-			Message message=new MimeMessage(session);
-			message.setFrom(new InternetAddress(myAccountEmail));
-			message.setRecipient(Message.RecipientType.TO, new InternetAddress(email));
-			message.setSubject("Uom Bank - Loan Application");
-			message.setText("Your application has been created.");
-			
-			Transport.send(message);
-			System.out.println("Message sent successfully");
+			Message message = new MimeMessage(session);
+	        message.setFrom(new InternetAddress(myAccountEmail));
+	        message.setRecipient(Message.RecipientType.TO, new InternetAddress(email));
+	        message.setSubject("Resultados TXM Weather");
+
+	        // Personalizar el mensaje de acuerdo a las variables, incluyendo weatherOk
+	        String weatherStatus = weatherOk ? "fine" : "not suitable";
+	        message.setText("Hello " + name + ",\n\nYour application has been created. The weather is " + weatherStatus + "!");
+
+	        Transport.send(message);
+	        System.out.println("Message sent successfully");
 	
 			
 	}
