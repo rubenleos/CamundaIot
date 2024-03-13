@@ -1,0 +1,7 @@
+com\camunda\iot\IotDemo\SendEmail.class
+com\camunda\iot\IotDemo\ProcessConstants.class
+com\camunda\iot\IotDemo\LoggerDelegate.class
+com\camunda\iot\IotDemo\CamundaBpmProcessApplication.class
+com\camunda\iot\IotDemo\CheckYes.class
+com\camunda\iot\IotDemo\SendEmail$1.class
+com\camunda\iot\IotDemo\CheckWDelegate.class
