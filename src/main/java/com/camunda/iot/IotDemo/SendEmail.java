@@ -15,7 +15,7 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 public class SendEmail implements JavaDelegate {
 	public void execute (DelegateExecution execution) throws Exception{
 	        String name = (String) execution.getVariable("name");
-	        boolean weatherOk = (boolean) execution.getVariable("weatherOk");
+	        boolean weatherOk = (boolean) execution.getVariable("weatherOK");
 		
 			String email = (String) execution.getVariable("email");
 			if (email == null) {

@@ -7,7 +7,7 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 
 public class LoggerLEDOn implements JavaDelegate {
 	 
-	  private final Logger LOGGER = Logger.getLogger(LoggerDelegate.class.getName());
+	  private final Logger LOGGER = Logger.getLogger(LoggerLEDOn.class.getName());
 	  
 	  public void execute(DelegateExecution execution) throws Exception {
 	    

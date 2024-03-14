@@ -12,12 +12,13 @@ import com.google.gson.JsonObject;
 public class CheckYes implements JavaDelegate {
     public void execute(DelegateExecution execution) throws Exception {
         URL url = new URL("http://34.28.106.98:9001/switch"); // Cambia esto por la URL a la que quieres enviar la petición
+        Boolean encender = true;
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("POST");
         conn.setRequestProperty("Content-Type", "application/json");
         conn.setDoOutput(true);
         JsonObject jsonObject = new JsonObject();
-        String encender=(String) execution.getVariable("encender");
+         encender=(Boolean) execution.getVariable("encender");
        // System.out.print("encender" + encender);
         jsonObject.addProperty("flag", encender);
         String jsonInputString = new Gson().toJson(jsonObject);

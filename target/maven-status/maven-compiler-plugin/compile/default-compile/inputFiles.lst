@@ -2,5 +2,7 @@ C:\Users\ruben\eclipse-workspace\IotDemo\src\main\java\com\camunda\iot\IotDemo\C
 C:\Users\ruben\eclipse-workspace\IotDemo\src\main\java\com\camunda\iot\IotDemo\ProcessConstants.java
 C:\Users\ruben\eclipse-workspace\IotDemo\src\main\java\com\camunda\iot\IotDemo\CamundaBpmProcessApplication.java
 C:\Users\ruben\eclipse-workspace\IotDemo\src\main\java\com\camunda\iot\IotDemo\LoggerDelegate.java
+C:\Users\ruben\eclipse-workspace\IotDemo\src\main\java\com\camunda\iot\IotDemo\LoggerLEDOn.java
 C:\Users\ruben\eclipse-workspace\IotDemo\src\main\java\com\camunda\iot\IotDemo\CheckYes.java
+C:\Users\ruben\eclipse-workspace\IotDemo\src\main\java\com\camunda\iot\IotDemo\LoggerLEDOff.java
 C:\Users\ruben\eclipse-workspace\IotDemo\src\main\java\com\camunda\iot\IotDemo\SendEmail.java

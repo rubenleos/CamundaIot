@@ -6,27 +6,23 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 
 public class CheckWDelegate implements JavaDelegate {
 
-	@Override
-	public void execute(DelegateExecution execution) throws Exception {
-		Random rando = new Random();
-	//	boolean flag = true;
-		  Boolean weatherOK =true;
-		// TODO Auto-generated method stub
-       // execution.setVariable("name", "niall");
-       // execution.setVariable("weatherOK", rando );
+    @Override
+    public void execute(DelegateExecution execution) throws Exception {
+        Random rando = new Random();
+        // Obtenemos las variables de la ejecución
         String strNSev = (String) execution.getVariable("event_nseverity");
         String name = (String) execution.getVariable("name");
-         weatherOK = (Boolean) execution.getVariable("weatherOK");
-         System.out.println("****watherstatus**** 000.111  " + weatherOK);
-        if (weatherOK != null) {
-            System.out.println("***strNSev***   " + strNSev);
-            System.out.println("***name***  " + name);
-            System.out.println("****watherstatus****  " + weatherOK);
+        Boolean weather = (Boolean) execution.getVariable("weatherOK");
+        //boolean  watherOK = (boolean) weather;
+        // Imprimimos el estado del clima si está disponible
+        if (weather != null) {
+          //  System.out.println("**** Estado del clima ****: " + weatherOK);
+            System.out.println("*** Severidad del evento ***: " + strNSev);
+            System.out.println("*** Nombre ***: " + name);
         } else {
-            System.out.println("***event_nseverity variable is null***");
-            execution.setVariable("weatherOK", weatherOK );
-            // Handle the case when the variable is null
+            // Imprimimos una advertencia si el estado del clima es nulo
+            System.out.println("*** La variable 'weatherOK' es nula. Estableciendo en true por defecto. ***");
+            execution.setVariable("weatherOK", true);
         }
-	}
-
+    }
 }
