@@ -18,11 +18,12 @@ public class CheckYes implements JavaDelegate {
         conn.setDoOutput(true);
         JsonObject jsonObject = new JsonObject();
         String encender=(String) execution.getVariable("encender");
+       // System.out.print("encender" + encender);
         jsonObject.addProperty("flag", encender);
         String jsonInputString = new Gson().toJson(jsonObject);
 
        // String postData = "flag=true"; // Aquí envías el flag
-        System.out.print("jason" + jsonInputString);
+        System.out.println("jason" + jsonInputString);
         try (OutputStream os = conn.getOutputStream()) {
         	  byte[] input = jsonInputString.getBytes("utf-8");
               os.write(input, 0, input.length);
